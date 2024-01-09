@@ -1,0 +1,62 @@
+/* https://www.w3schools.com/sass/sass_intro.php */
+.test h1 {
+  font-weight: bolder;
+}
+.test button {
+  padding: 10px 30px;
+  border: none;
+  background-color: aqua;
+}
+.test button:hover {
+  background-color: azure;
+}
+.test button:hover::after {
+  content: "=> yo!";
+}
+
+.test2 h1 {
+  font-weight: bolder;
+}
+.test2 button {
+  padding: 10px 30px;
+  border: none;
+  background-color: aqua;
+}
+.test2 button:hover {
+  background-color: azure;
+}
+.test2 button:hover::after {
+  content: "=> yo!";
+}
+
+.test3 h1 {
+  font-weight: bolder;
+}
+.test3 button {
+  padding: 10px 30px;
+  border: none;
+  background-color: aquamarine;
+}
+.test3 button:hover {
+  background-color: azure;
+}
+.test3 button:hover::after {
+  content: "=> yo!";
+}
+
+.btn, .btn-rounded {
+  padding: 15px 30px;
+  border: none;
+  background-color: aquamarine;
+}
+.btn:hover, .btn-rounded:hover {
+  background-color: aqua;
+}
+.btn:hover::after, .btn-rounded:hover::after {
+  content: " => myst3r10us{S4SS_1s_4w3s0m3}";
+}
+
+.btn-rounded {
+  border-radius: 10px;
+  background-color: cornflowerblue;
+}/*# sourceMappingURL=style.css.map */

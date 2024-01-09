@@ -1,0 +1,106 @@
+/* https://www.w3schools.com/sass/sass_intro.php */
+// good tutorial: https://www.youtube.com/watch?v=7wfAXtJcjho&ab_channel=YashPatel
+// documentation: https://sass-lang.com/documentation/ 
+
+
+// You can set Variable in SASS
+// Must put variables before importing lines
+$btnColor: aqua;
+$btnPadding: 10px 30px;
+
+// mixin is a function in SASS that can be reused in other SASS files
+@mixin secretButton {
+    // padding: 10px 30px;
+    padding: $btnPadding;
+    border: none;
+    // background-color: aqua;
+    background-color: $btnColor;
+}
+
+// In SASS, you can import other SASS files
+@import './test1';
+
+
+.test2 {
+    h1{
+        font-weight: bolder;
+    }
+
+    button{
+        // padding: $btnPadding;
+        // border: none;
+        // background-color: $btnColor;
+
+        @include secretButton();
+
+        // Different way of expressing hover in SASS
+        &:hover{
+            background-color: azure;
+
+            &::after{
+                content: "=> yo!"
+            }
+        }
+    }
+}
+
+// You can pass value/variable in mixin
+@mixin secretButton2($real_secret_color) {
+    // padding: 10px 30px;
+    padding: $btnPadding;
+    border: none;
+    // background-color: aqua;
+    background-color: $real_secret_color;
+}
+
+
+.test3 {
+    h1{
+        font-weight: bolder;
+    }
+
+    button{
+        // padding: $btnPadding;
+        // border: none;
+        // background-color: $btnColor;
+
+        @include secretButton2(aquamarine);
+
+        // Different way of expressing hover in SASS
+        &:hover{
+            background-color: azure;
+
+            &::after{
+                content: "=> yo!"
+            }
+        }
+    }
+}
+
+
+// You can extend a class in SASS (similar to inheritance)
+// You can do arithmetic in SASS as well
+
+$btnPadding: 10px;
+
+.btn {
+    padding: ($btnPadding + 5) 30px;
+    border: none;
+    background-color: aquamarine;
+
+    &:hover{
+        background-color: aqua;
+
+        &::after{
+            content: " => myst3r10us{S4SS_1s_4w3s0m3}"
+        }
+    }
+}
+
+.btn-rounded{
+    @extend .btn;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+}
+
+

@@ -1,0 +1,23 @@
+// SASS CSS - nesting styling features
+.test {
+    h1{
+        font-weight: bolder;
+    }
+
+    button{
+        // padding: $btnPadding;
+        // border: none;
+        // background-color: $btnColor;
+
+        @include secretButton();
+
+        // Different way of expressing hover in SASS
+        &:hover{
+            background-color: azure;
+
+            &::after{
+                content: "=> yo!"
+            }
+        }
+    }
+}
